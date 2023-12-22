@@ -11,13 +11,14 @@ let fallidos = localStorage.getItem('numeroUsuario') || 0
 //funciones
 
 function generarNumero() {
-    numeroAleatorio = math.floor(Math.random() * 10)
+    numeroAleatorio = Math.floor(Math.random() * 10)
+    console.log(numeroAleatorio)
 }
 
-function comprobarNumero(){
+function comprobarNumero() {
 
     let valorInput = document.querySelector('#numeroUsuario').value
-    valorInput = parselnt(valorInput)
+    valorInput = parseInt(valorInput)
 
     if (valorInput === numeroAleatorio) {
         exitosos++
@@ -47,3 +48,5 @@ botonComprobar.addEventListener('click', () => {
 botonLimpiar.addEventListener('click', () => {
 	limpiarDatos()
 })
+
+generarNumero()
